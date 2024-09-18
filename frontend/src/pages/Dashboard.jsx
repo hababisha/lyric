@@ -40,7 +40,7 @@ const Dashboard = () => {
     return (
         <div>
         <Navbar showSearch={true} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />        <div className="container mx-auto p-4">
-            <h2 className="text-3xl text-gray-900 font-bold mb-6 flex justify-center">ቃልየ አፅምዕ እግዚኦ ወለቡ ጽራሕየ</h2>
+            <h2 className="text-3xl text-gray-900 font-bold mb-6 flex justify-center">በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሃዱ አምላክ አሜን፡፡</h2>
             
             <div className='mb-7 flex justify-center'>
             <SearchBar
