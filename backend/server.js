@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-const lyricRoutes = require('./routes/lyrics'); //Imported lyrics routes
-const authRoutes = require('./routes/auth'); // Imported authentication routes
+const lyricRoutes = require('./api/lyrics'); //Imported lyrics routes
+const authRoutes = require('./api/auth'); // Imported authentication routes
 
 const app = express();
 const PORT = process.env.PORT || 5000;
