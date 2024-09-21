@@ -23,8 +23,8 @@ app.get('/', (req, res) => {
     res.send("Welcome to the backend");
 });
 
-app.use('/api/auth', authRoutes);
-app.use('/api/lyrics', lyricRoutes);
+app.use('./auth', authRoutes);
+app.use('./lyrics', lyricRoutes);
 
 // Export the serverless function
 module.exports = app;
