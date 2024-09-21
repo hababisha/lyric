@@ -1,12 +1,13 @@
+// api/index.js
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
+const mongoose = require('mongoose');
 require('dotenv').config();
-const lyricRoutes = require('./api/lyrics'); //Imported lyrics routes
-const authRoutes = require('./api/auth'); // Imported authentication routes
+
+const lyricRoutes = require('./lyrics'); // Imported lyrics routes
+const authRoutes = require('./auth'); // Imported authentication routes
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
@@ -19,12 +20,11 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 
 // Sample route
 app.get('/', (req, res) => {
-    res.send("Welcome to the backend")
+    res.send("Welcome to the backend");
 });
 
 app.use('/api/auth', authRoutes);
-app.use('/api/lyrics', lyricRoutes)
+app.use('/api/lyrics', lyricRoutes);
 
-// app.listen(PORT, () => {
-//     console.log(`Server running on http://localhost:${PORT}`);
-// });
+// Export the serverless function
+module.exports = app;
