@@ -52,43 +52,42 @@ const AddMezmur = ({ children }) => {
         <>
 
 <Navbar showSearch={false} />
-        <div className="container mx-auto p-4">
-            <h2 className="text-3xl font-bold mb-6">Add Mezmur</h2>
-            <form onSubmit={handleSubmit} className="bg-white p-4 rounded shadow">
-                <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium">Title:</label>
-                    <input
-                        type="text"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        className="w-full p-2 border rounded"
-                        required
-                    />
-                </div>
-                <div className="mb-4">
-                    <label className="block mb-2 text-sm font-medium">Lyrics:</label>
-                    <textarea
-                        value={lyrics}
-                        onChange={(e) => setLyrics(e.target.value)}
-                        className="w-full p-2 border rounded"
-                        rows="4"
-                        required
-                    />
-                </div>
-                <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                >
-                    Add
-                </button>
-                {message && <p className="mt-4 text-green-600">{message}</p>}
-                {errorMessage && <p className="mt-4 text-red-600">{errorMessage}</p>}
-
-                
-            </form>
+<div className="container mx-auto p-4 w-full max-w-lg">
+    <h2 className="text-4xl font-bold mb-6 text-center text-gray-800">Add Mezmur</h2>
+    <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:shadow-xl">
+        <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-700">Title:</label>
+            <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+            />
         </div>
-        </>
-    );
+        <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-700">Lyrics:</label>
+            <textarea
+                value={lyrics}
+                onChange={(e) => setLyrics(e.target.value)}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                rows="4"
+                required
+            />
+        </div>
+        <button
+            type="submit"
+            className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"
+        >
+            Add
+        </button>
+        {message && <p className="mt-4 text-green-600">{message}</p>}
+        {errorMessage && <p className="mt-4 text-red-600">{errorMessage}</p>}
+    </form>
+</div>
+    </>
+    )
 };
+
 
 export default AddMezmur;

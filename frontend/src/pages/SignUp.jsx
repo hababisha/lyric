@@ -16,6 +16,7 @@ const SignUp = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
+
     if (!username) {
       setError("Please enter your name.");
       return;
@@ -35,8 +36,9 @@ const SignUp = () => {
         setMessage('Registration successful! You can log in now.');
     } catch (error) {
       console.error('Registration error:', error.response || error); // Log the entire error response
-      setMessage(error.response?.data?.message || 'Error during registration. Please try again.');
+      setErrorMessage(error.response?.data?.message || 'Error during registration. Please try again.');
   }
+  setErrorMessage('');
 
   };
   return (
