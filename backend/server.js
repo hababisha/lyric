@@ -17,6 +17,11 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
+ app.listen(PORT, () => {
+     console.log(`Server running on http://localhost:${PORT}`);
+});
+    
+
 // Sample route
 app.get('/', (req, res) => {
     res.send("Welcome to the backend")
@@ -28,4 +33,3 @@ app.use('/api/lyrics', lyricRoutes)
 // app.listen(PORT, () => {
 //     console.log(`Server running on http://localhost:${PORT}`);
 // });
-module.exports = app;
