@@ -8,9 +8,9 @@ import { Link, useNavigate } from 'react-router-dom';
 const ProfileInfo = ({ onLogout }) => {
   return (
     <div className='flex items-center gap-3'>
-         <Link
+        <Link
             to="/add"
-            className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:underline transition duration-300"
+            className="flex items-center justify-center  text-white hover:underline transition duration-300"
         >
             <FaPlus className="text-xl" />
         </Link>

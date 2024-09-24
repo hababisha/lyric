@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <div className='bg-gray-800 flex items-center justify-between px-6 py-2 drop-shadow'>
-    <Link to="/"><h2 className='text-xl font-medium text-white py-2 hover:text-color-red'>መዝሙር ግጥሞች</h2></Link>
+    <Link to="/"><h2 className='text-xl font-medium text-white py-2 hover:text-color-red'>መዝሙር</h2></Link>
  
       {/* <SearchBar
        value={searchQuery}
@@ -62,7 +62,7 @@ const Navbar = () => {
       ) : (
         <Link
             to="/add"
-            className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:underline transition duration-300"
+            className="flex items-center justify-center  text-white hover:underline transition duration-300"
         >
             <FaPlus className="text-xl" />
         </Link>
