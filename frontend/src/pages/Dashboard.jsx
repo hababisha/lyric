@@ -14,7 +14,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchLyrics = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/lyrics'); // Adjust the endpoint as necessary
+                const response = await axios.get('https://lyric-io8d.vercel.app/api/lyrics'); // Adjust the endpoint as necessary
                 setLyrics(response.data);
             } catch (error) {
                 console.error('Error fetching lyrics:', error);

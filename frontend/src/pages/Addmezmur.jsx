@@ -26,7 +26,7 @@ const AddMezmur = ({ children }) => {
         const token = localStorage.getItem('authToken'); // Get the token
     
         try {
-            const response = await axios.post('http://localhost:5000/api/lyrics', {
+            const response = await axios.post('https://lyric-io8d.vercel.app/api/lyrics', {
                 title,
                 lyrics,
                 user: userId // Send the actual user ID
