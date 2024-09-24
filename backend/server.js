@@ -5,6 +5,7 @@ require('dotenv').config();
 const lyricRoutes = require('./api/lyrics'); //Imported lyrics routes
 const authRoutes = require('./api/auth'); // Imported authentication routes
 
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
