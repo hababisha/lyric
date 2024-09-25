@@ -14,6 +14,11 @@ const lyricsSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    category: {
+        type: String,
+        enum: ['Tsom', 'Beal', 'Senbet', 'Other'],
+        required: true
+    }
     // user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true } // Reference to the User model
 
 });

@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 const AddMezmur = ({ children }) => {
     const [title, setTitle] = useState('');
     const [lyrics, setLyrics] = useState('');
+    const [category, setCategory] = useState('Senbet');
     const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
@@ -29,6 +30,7 @@ const AddMezmur = ({ children }) => {
             const response = await axios.post('https://lyric-io8d.vercel.app/api/lyrics', {
                 title,
                 lyrics,
+                category,
                 user: userId // Send the actual user ID
             }, {
                 headers: {
@@ -75,6 +77,21 @@ const AddMezmur = ({ children }) => {
                 required
             />
         </div>
+        <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-700">Category:</label>
+            <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+            >
+                <option value="Tsom">Tsom</option>
+                <option value="Beal">Beal</option>
+                <option value="Senbet">Senbet</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        
         <button
             type="submit"
             className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"
