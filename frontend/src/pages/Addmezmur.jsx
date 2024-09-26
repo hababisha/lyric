@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 const AddMezmur = ({ children }) => {
     const [title, setTitle] = useState('');
     const [lyrics, setLyrics] = useState('');
-    const [category, setCategory] = useState('Senbet');
+    const [category, setCategory] = useState('Other');
     const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
@@ -27,7 +27,7 @@ const AddMezmur = ({ children }) => {
         const token = localStorage.getItem('authToken'); // Get the token
     
         try {
-            const response = await axios.post('https://lyric-io8d.vercel.app/api/lyrics', {
+            const response = await axios.post('https://lyric-1dri.vercel.app/api/lyrics', {
                 title,
                 lyrics,
                 category,
@@ -82,16 +82,15 @@ const AddMezmur = ({ children }) => {
             <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"              
             >
                 <option value="Tsom">Tsom</option>
                 <option value="Beal">Beal</option>
                 <option value="Senbet">Senbet</option>
                 <option value="Other">Other</option>
+
             </select>
         </div>
-        
         <button
             type="submit"
             className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-200"

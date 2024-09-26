@@ -19,7 +19,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchLyrics = async () => {
             try {
-                const response = await axios.get('https://lyric-io8d.vercel.app/api/lyrics'); // Adjust the endpoint as necessary
+                const response = await axios.get('https://lyric-1dri.vercel.app/api/lyrics'); // Adjust the endpoint as necessary
                 setLyrics(response.data);
                 setFilteredLyrics(response.data);
 
@@ -33,15 +33,17 @@ const Dashboard = () => {
         fetchLyrics();
     }, []);
    
-    const filterResults = () => {
+       
+     // Update filtered lyrics whenever search query or selected category changes
+    useEffect(() => {
         let results = lyrics;
 
-        // Filter by selected category
+        //Filter by selected category
         if (selectedCategory !== 'All') {
             results = results.filter(lyric => lyric.category === selectedCategory);
         }
 
-        // Further filter by search query
+       // Further filter by search query
         if (searchQuery) {
             results = results.filter(lyric =>
                 lyric.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -49,18 +51,17 @@ const Dashboard = () => {
         }
 
         setFilteredLyrics(results);
-    };
-
-     // Update filtered lyrics whenever search query or selected category changes
-    useEffect(() => {
-        filterResults();
     }, [searchQuery, selectedCategory, lyrics]);
+
+        
+    
 
 
     return (
         <div className=" flex flex-col h-screen">
         <div className='flex-grow'>
-        <Navbar showSearch={true} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />        <div className="container mx-auto p-4">
+        <Navbar showSearch={true} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+                <div className="container mx-auto p-4">
             <h2 className="text-lg text-gray-900 font-bold mb-6 flex justify-center">በስመ አብ ወወልድ ወመንፈስ ቅዱስ አሃዱ አምላክ አሜን፡፡</h2>
             
             <div className='mb-7 flex justify-center'>
@@ -97,7 +98,7 @@ const Dashboard = () => {
                                 <LyricCard key={lyric.id} lyric={lyric} />
                             ))
                         ) : (
-                            <div>No results found for this category.</div>
+                            <div>No results found.</div>
                         )}
                     </div>
                 )}

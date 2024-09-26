@@ -17,10 +17,10 @@ router.get('/', async (req, res) => {
 
 // Create a new lyric
 router.post('/', auth, async (req, res) => {
-    const { title, lyrics, createdAt } = req.body;
+    const { title, lyrics, category, createdAt } = req.body;
 
     try {
-        const newLyric = new Lyric({ title, lyrics, createdAt });
+        const newLyric = new Lyric({ title, lyrics, category, createdAt });
         await newLyric.save();
         res.status(201).json(newLyric); // Respond with the created lyric
     } catch (error) {

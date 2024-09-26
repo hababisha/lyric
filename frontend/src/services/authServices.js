@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://lyric-io8d.vercel.app/api/auth'; // Adjust the URL as needed
+const API_URL = 'https://lyric-1dri.vercel.app/api/auth'; // Adjust the URL as needed
 
 export const registerUser = async (userData) => {
     const response = await axios.post(`${API_URL}/register`, userData);
