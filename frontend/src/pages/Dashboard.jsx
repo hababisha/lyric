@@ -19,7 +19,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchLyrics = async () => {
             try {
-                const response = await axios.get('https://lyric-1dri.vercel.app/api/lyrics'); // Adjust the endpoint as necessary
+                const response = await axios.get('https://lyric-orcin.vercel.app/api/lyrics'); // Adjust the endpoint as necessary
                 setLyrics(response.data);
                 setFilteredLyrics(response.data);
 
