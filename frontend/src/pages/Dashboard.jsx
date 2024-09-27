@@ -58,7 +58,8 @@ const Dashboard = () => {
 
 
     return (
-        <div className=" flex flex-col h-screen">
+        <>
+        <div className="flex flex-col h-[90vh]">
         <div className='flex-grow'>
         <Navbar showSearch={true} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                 <div className="container mx-auto p-4">
@@ -104,9 +105,11 @@ const Dashboard = () => {
                 )}
             </div>
            </div>
-           <Footer />
 
         </div>
+        <Footer />
+
+        </>
     );
 };
 
