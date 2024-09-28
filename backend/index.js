@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5001;
 // Middleware
 app.use(cors(
     {
-        origin: '*',
+        origin: 'mezmure.vercel.app',
         methods: ["GET", "POST"],
         credentials: true
     }
