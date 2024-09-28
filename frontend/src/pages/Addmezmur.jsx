@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Navigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import Footer from './Footer';
 
 const AddMezmur = ({ children }) => {
     const [title, setTitle] = useState('');
@@ -27,7 +28,7 @@ const AddMezmur = ({ children }) => {
         const token = localStorage.getItem('authToken'); // Get the token
     
         try {
-            const response = await axios.post('https://lyric-eight.vercel.app/api/lyrics', {
+            const response = await axios.post('http://localhost:5001/api/lyrics', {
                 title,
                 lyrics,
                 category,
@@ -101,6 +102,7 @@ const AddMezmur = ({ children }) => {
         {errorMessage && <p className="mt-4 text-red-600">{errorMessage}</p>}
     </form>
 </div>
+    <Footer />
     </>
     )
 };

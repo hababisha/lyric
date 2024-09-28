@@ -19,7 +19,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchLyrics = async () => {
             try {
-                const response = await axios.get('https://lyric-eight.vercel.app/api/lyrics'); // Adjust the endpoint as necessary
+                const response = await axios.get('http://localhost:5001/api/lyrics'); // Adjust the endpoint as necessary
                 setLyrics(response.data);
                 setFilteredLyrics(response.data);
 
@@ -59,7 +59,7 @@ const Dashboard = () => {
 
     return (
         <>
-        <div className="flex flex-col h-[90vh]">
+        <div className="flex flex-col min-h-screen">
         <div className='flex-grow'>
         <Navbar showSearch={true} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                 <div className="container mx-auto p-4">

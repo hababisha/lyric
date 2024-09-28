@@ -17,7 +17,7 @@ const LyricCard = ({ lyric }) => {
 
     return (
         <div 
-            className={`border rounded-md p-4 pb-20 bg-gray-800 transition-all duration-300 ${isExpanded ? 'h-auto' : 'h-20 overflow-hidden'}`}
+            className={`border rounded-md p-4 shadow-md pb-20 bg-gray-800 transition-all duration-300 ${isExpanded ? 'h-auto' : 'h-20 overflow-hidden'}`}
             onClick={toggleExpand}
         >
             <div className="flex justify-between items-center">
