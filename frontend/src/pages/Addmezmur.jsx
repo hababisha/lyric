@@ -23,12 +23,12 @@ const AddMezmur = ({ children }) => {
         e.preventDefault();
         setMessage(''); // Reset message
     
-        const user = JSON.parse(localStorage.getItem('user'));
+        const user = JSON.parse(localStorage.getItem('user'));  
         const userId = user ? user.id : null; // Get the user ID
         const token = localStorage.getItem('authToken'); // Get the token
     
         try {
-            const response = await axios.post('https://lyric-syqg.vercel.app/api/lyrics', {
+            const response = await axios.post('https://lyric-sigma.vercel.app/api/lyrics', {
                 title,
                 lyrics,
                 category,
@@ -64,7 +64,7 @@ const AddMezmur = ({ children }) => {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 border  border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
             />
         </div>
